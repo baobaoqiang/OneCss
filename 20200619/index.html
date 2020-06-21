@@ -2,7 +2,42 @@
  * @Author: wq
  * @Date: 2020-06-19 17:59:39
  * @LastEditors: wq
- * @LastEditTime: 2020-06-19 18:02:12
+ * @LastEditTime: 2020-06-20 14:12:57
  * @Description: 泡泡效果
  * @FilePath: \OneCss\20200619\index.html
 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <title></title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <section>
+  </section>
+  <script type="text/javascript">
+    function createBubble() {
+      const section = document.querySelector('section')
+      const createElement = document.createElement('span')
+      var size = Math.random() * 60
+
+      createElement.style.width = 20 + size + 'px';
+      createElement.style.height = 20 + size + 'px';
+      createElement.style.left = Math.random() * innerWidth + 'px';
+      section.appendChild(createElement);
+
+
+      setTimeout(() => {
+        createElement.remove()
+      }, 5000);
+    }
+
+    setInterval(createBubble, 50)
+  </script>
+</body>
+
+</html>
